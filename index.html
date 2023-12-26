@@ -149,27 +149,6 @@
             </div>
         </div>
         <div class="contact-form">
-            <?php
-            if ($_SERVER["REQUEST_METHOD"] == "POST") {
-                $name = $_POST['name'];
-                $email = $_POST['email'];
-                $phone = $_POST['phone'];
-                $message = $_POST['message'];
-
-                $to = "daryldelostrinosbenitez@gmail.com";
-
-                $subject = "New Message from Contact Form";
-                $body = "Name: $name\nEmail: $email\nPhone: $phone\nMessage: $message";
-
-                $headers = "From: $email";
-
-                if (mail($to, $subject, $body, $headers)) {
-                    echo "<p class='success-message'>Message sent successfully!</p>";
-                } else {
-                    echo "<p class='error-message'>Oops! Something went wrong.</p>";
-                }
-            }
-            ?>
                 <form action="" method="POST">
                 <input type="name"  name="name" id="name" placeholder="Your Name " required>
                 <input type="email" name="email" id="email" placeholder="Your Email" required>
